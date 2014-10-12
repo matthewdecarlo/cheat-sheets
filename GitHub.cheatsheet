@@ -1,0 +1,60 @@
+>	GitHub Cheatsheet
+>	A cheatsheet for GitHub shortcuts.
+>	Written by DeCarlo and Sherwani
+
+* * * * * * Simplified Workflows * * * * * *
+
+Configuring Git for GitHub 
+$ git config --global user.name "[full name]"
+# configures Git to have user’s full name
+$ git config --global user.email "[e-mail address]"
+# configures Git to have user’s e-mail 
+
+Cache HTTPS Login Credentials for One Hour 
+* Allows user to avoid entering username and password for every push
+$ git config --global credential.helper 'cache --timeout=3600'
+
+Creating a New Local Git Repository 
+$ mkdir [directory (repository) name]
+# creates a directory folder on the local machine
+$ cd [directory (repository)]
+# enters the newly created directory
+$ git init [directory (repository) name]
+# initializes the Git repository on the local machine
+
+Forking a Repository 
+* On GitHub.com navigate to the repository to be forked and click the
+fork button and follow promts. For more inforomation please
+see https://help.github.com/articles/fork-a-repo/
+
+Cloning a Repository 
+* Locate clone URL of the repository to be forked
+E.g., https://github.com/[GitHub user]/[repository].git
+
+* Navigate to the local directory folder where the repository will be cloned to
+
+$ git clone [copied clone URL address]
+
+Configure Remote Repositories 
+* used for pulling/ fetching from remote repositories
+$ git remote -v
+# display remote repositories configured on the local machine
+$ git remote add [alias for remote repository name] [remote url of targeted repository]
+# adds a local alias for the remote repository
+
+Fetching From a Remote Repository 
+$ git fetch [remote repository alias] [branch]
+# gets the current state of the remote repository
+$ git merge [remote repository alias]/[branch]
+# combines remote repository changes with the current local branch, the user may be
+# prompted to choose which modification to keep
+
+Pushing to GitHub 
+$ git pull [remote branch]
+# fetches and merges current state of remote branch allowing user to check discrepancies 
+$ git add .
+# stages all files for the upcoming commit
+$ git commit -m “[brief, concise message]”
+# commits ‘snapshot’ with a descriptive memo/ comment
+$ git push
+# pushes the committed changes to GitHub
